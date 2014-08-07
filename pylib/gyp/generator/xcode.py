@@ -576,6 +576,16 @@ def PerformBuild(data, configurations, params):
 
 
 def GenerateOutput(target_list, target_dicts, data, params):
+  print("""GenerateOutput:
+
+  target_list = """+ repr(target_list) +"""
+
+  target_dicts = """+ repr(target_dicts) +"""
+
+  data = """+ repr(data) +"""
+
+  params = """+ repr(params) +"""
+""")
   # Optionally configure each spec to use ninja as the external builder.
   ninja_wrapper = params.get('flavor') == 'ninja'
   if ninja_wrapper:
